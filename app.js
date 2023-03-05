@@ -1,13 +1,24 @@
 const express = require("express");
 const connectDB = require("./db/connect");
 const app = express();
+const cors = require("cors");
+
 const tasks = require("./routes/tasks");
 const notFound = require("./middlewares/notFound");
 const errorHandlerMiddleware = require("./middlewares/error-handler");
 require("dotenv").config();
 
 //middleware
+app.use(
+  cors({
+    origin: ["https://task-manager-27dc2.web.app"],
+    methods: ["GET", "POST","DELETE","PATCH"],
+    credentials: true,
+  })
+);
+
 app.use(express.static("./public"));
+
 app.use(express.json());
 
 // routes
