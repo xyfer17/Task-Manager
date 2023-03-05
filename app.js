@@ -11,9 +11,9 @@ require("dotenv").config();
 //middleware
 app.use(
   cors({
-    origin: ["https://task-manager-27dc2.web.app"],
-    methods: ["GET", "POST","DELETE","PATCH"],
-    credentials: true,
+    //origin: ["https://task-manager-27dc2.web.app"],
+    //methods: ["GET", "POST","DELETE","PATCH"],
+    credentials: false,
   })
 );
 
